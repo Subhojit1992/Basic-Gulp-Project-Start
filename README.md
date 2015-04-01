@@ -55,6 +55,10 @@ So, keep doing the awesome things with gulp.
 Note: You can also use BrowserSync for your project. You can find all details http://www.browsersync.io/docs/gulp
 BrowserSync is awesome for your workflow and testing.
 
+*********************************************
+Now I have updated the Gulpfile.js. You can now automation your many scripts form diffrent source to use your automation process. I have used gulp merge2 (https://www.npmjs.com/package/merge2).
+
+Now enjoy your full automation process with gulp js
 
 
 
