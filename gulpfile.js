@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+	gulpSequence = require('gulp-sequence'),
+	concat = require('gulp-concat');
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-ruby-sass'),
 	plumber = require('gulp-plumber'),
@@ -6,13 +8,20 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer');
 
 //Scripts Tasks
-//uglify
+//uglify and many script
 gulp.task('scripts', function() {
-	gulp.src('js/*.js')
+	gulp.src([
+			'js/vendor/jquery.js',
+			'js/vendor/bootstrap.js',
+			'js/html5-3.6-respond-1.4.2.min.js',
+			'js/main.js'
+		])
 		.pipe(plumber())
 		.pipe(uglify())
+		.pipe(concat('main.js'))
 		.pipe(gulp.dest('dest/js'));
 });
+
 
 //Style Tasks
 //uglify
@@ -31,8 +40,6 @@ gulp.task('image', function() {
 		.pipe(imagemin())
 		.pipe(gulp.dest('dest/img'));
 });
-
-
 
 //Watch Tasks
 //watches js, scss, images
